@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Silkscreen", cursive;
+  font-size: 40px;
+  color: rgb(111, 68, 87);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: none;
+  background-color: rgb(253, 235, 235);
+  text-align: center;
+}
+
+.score {
+  padding-bottom: 50px;
+}
+
+.board {
+  padding: 60px;
+  padding-bottom: 105px;
+  height: 700px;
+  width: 700px;
+  background-image: url("/imgs/board.png");
+  background-repeat: no-repeat;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 90px;
+}
+
+/* credit to Angle Brace on youtube  */
+
+.hole {
+  background-color: rgb(177, 140, 142);
+  border: 3px solid rgb(111, 68, 87);
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.hole .cat {
+  width: 80%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  animation: rise 0.3s ease-out;
+}
+
+@keyframes rise {
+  0% {
+    transform: translateX(-50%) translateY(100%);
+  }
+  100% {
+    transform: translateX(-50%) translateY(0%);
+  }
+}
+
+.cursor {
+  height: 110px;
+  width: 100px;
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  background-image: url("../imgs/paw.png");
+  background-size: 100% 100%;
+  transform: translate(-0%, -20%);
+  transition: transform 0.1s;
+  pointer-events: none;
+}
+
+.cursor.active {
+  transform: translate(-20%, -20%) rotate(-45deg);
+}

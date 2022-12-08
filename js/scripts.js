@@ -9,16 +9,13 @@ var sound2 = new Audio("audio/cat2.wav")
 var sound3 = new Audio("audio/cat3.wav")
 var sounds = [sound, sound2, sound3]
 
-
-
- /* credit to Angle Brace on youtube  */
-
 function run (){
     if (score == 1000) {
         alert('You did it! Resetting score.')
         score = 0
     }
 
+/* credit to Angle Brace on youtube  */
     var i = Math.floor(Math.random()*holes.length)
     var  hole = holes[i]
     var img = document.createElement('img')
@@ -47,8 +44,6 @@ function run (){
     }, 1500)
 }
 run()
-
- /* credit to Angle Brace on youtube  */
 
 window.addEventListener('mousemove', e => {
     cursor.style.top = e.pageY + 'px'
